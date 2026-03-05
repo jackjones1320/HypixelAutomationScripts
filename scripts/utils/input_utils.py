@@ -109,3 +109,15 @@ def scroll(amount: int, direction='down'):
     """
     clicks = amount + random.randint(-1, 1)
     pyautogui.scroll(-clicks if direction == 'down' else clicks)
+
+
+def camera_turn(dx: int, dy: int = 0):
+    """
+    Rotate the in-game camera by (dx, dy) pixels using raw relative mouse movement.
+    Uses pynput instead of pyautogui so it works inside Minecraft's captured mouse mode.
+    dx > 0 = turn right, dx < 0 = turn left.
+    dy > 0 = look down,  dy < 0 = look up.
+    At default Minecraft sensitivity (100%), ~1200 dx ≈ 180°.
+    Adjust via the turn_pixels config value in each script.
+    """
+    _mouse.move(dx, dy)
