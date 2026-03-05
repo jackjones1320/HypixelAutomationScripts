@@ -5,7 +5,6 @@ Part of the Hypixel Skyblock Scripts toolkit
 
 import time
 import random
-import math
 
 try:
     import pyautogui
